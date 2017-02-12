@@ -1,0 +1,10 @@
+
+{{#if itemsPromise.isResolved}}
+	<select {($values)}="values" multiple>
+	  {{#each itemsPromise.value}}
+		<option value="{{../getId(.)}}">{{../getDisplay(.)}}</option>
+	  {{/each}}
+	</select>
+{{else}}
+	<select disabled><option>Loading...</option></select>
+{{/if}}

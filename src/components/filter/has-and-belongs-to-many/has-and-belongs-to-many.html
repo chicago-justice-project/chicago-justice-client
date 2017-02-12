@@ -1,0 +1,22 @@
+<script src="../../../../node_modules/steal/steal.js" main="@empty">
+import "chicago-justice-client/components/filter/has-and-belongs-to-many/";
+import "~/models/fixtures/categories";
+import Category from "~/models/category";
+import stache from "can-stache";
+
+var template = stache(`
+    <p>Filter Value: {{*filterValues.length}}</p>
+
+    <has-and-belongs-to-many
+        {model}="@Model"
+        {model-title}="'Feed'"
+        {display-property}="displayProperty"
+        {^values}="*filterValues"
+        />`);
+
+document.body.appendChild( template({
+    displayProperty: "name",
+    Model: Category
+}) );
+
+</script>

@@ -1,0 +1,23 @@
+
+<script src="../../../../node_modules/steal/steal.js" main="@empty">
+import "chicago-justice-client/components/filter/belongs-to/";
+import "~/models/fixtures/feeds";
+import Feed from "~/models/feed";
+import stache from "can-stache";
+
+var template = stache(`
+    <p>Filter Value: {{*filterValue.name}}</p>
+
+    <filter-belongs-to
+        {model}="@Model"
+        {model-title}="'Feed'"
+        {display-property}="displayProperty"
+        {^value}="*filterValue"
+        />`);
+
+document.body.appendChild( template({
+    displayProperty: "name",
+    Model: Feed
+}) );
+
+</script>

@@ -1,0 +1,9 @@
+{
+  "generator-donejs": {
+    "promptValues": {
+      "authorName": "Chicago Justice Project, Bitovi",
+      "authorEmail": "justinbmeyer@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}

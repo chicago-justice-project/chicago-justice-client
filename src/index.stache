@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <can-import from="chicago-justice-client/styles.less" />
+    <can-import from="chicago-justice-client/app" export-as="viewModel" />
+
+    <h1>Chicago Justice Project</h1>
+
+    <div>
+        Start Date: <input type='date'/>
+    </div>
+
+    {{#switch env.NODE_ENV}}
+      {{#case "production"}}
+        <script src="{{joinBase 'steal.production.js'}}"></script>
+      {{/case}}
+      {{#default}}
+        <script src="/node_modules/steal/steal.js"></script>
+      {{/default}}
+    {{/switch}}
+  </body>
+</html>

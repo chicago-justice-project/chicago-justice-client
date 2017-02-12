@@ -1,0 +1,17 @@
+
+{{#if itemsPromise.isResolved}}
+	<select {($value)}="index-to-selected(~value, itemsPromise.value)">
+	  <option value='-1'>
+          {{#if value}}
+            Remove filter
+          {{else}}
+            No {{./modelTitle}} selected
+          {{/if}}
+      </option>
+	  {{#each itemsPromise.value}}
+		<option value="{{%index}}">{{../getDisplay(.)}}</option>
+	  {{/each}}
+	</select>
+{{else}}
+	<select disabled><option>Loading...</option></select>
+{{/if}}
